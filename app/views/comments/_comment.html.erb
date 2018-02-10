@@ -1,12 +1,9 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy comment', [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'} %>
-</p>
+<div class="card">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%= comment.body %></p>
+      <footer class="blockquote-footer"><%= comment.commenter %></footer>
+    </blockquote>
+    <%= link_to 'Destroy comment', [comment.article, comment], class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
+</div>
